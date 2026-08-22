@@ -1,0 +1,31 @@
+@prefix ex: <http://example.org/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+ex:Person a owl:Class .
+ex:Animal a owl:Class .
+ex:Food a owl:Class .
+
+ex:likes a owl:ObjectProperty .
+ex:loves a owl:ObjectProperty .
+ex:isCloseTo a owl:ObjectProperty .
+
+ex:cheolsu a ex:Person ;
+    rdfs:label "철수" ;
+    ex:likes ex:icecream ;
+    ex:loves ex:yeongi .
+
+ex:yeongi a ex:Person ;
+    rdfs:label "영이" ;
+    ex:likes ex:coffee ;
+    ex:isCloseTo ex:bomi .
+
+ex:bomi a ex:Animal ;
+    rdfs:label "보미" .
+
+ex:coffee a ex:Food ;
+    rdfs:label "커피" .
+
+ex:icecream a ex:Food ;
+    rdfs:label "아이스크림" .

@@ -1,0 +1,27 @@
+#Project
+h1 나의 첫번째 네트워크 그래프
+
+#Class
+사람 blue circle
+동물 red box
+음식 green ellipse
+
+#Relation
+likes 좋아한다 arrow
+loves 사랑한다 moving-arrows
+isCloseTo 친하다 both
+
+#Nodes
+철수 사람 철수
+영이 사람 영이
+보미 동물 보미
+커피 음식 커피
+크림 음식 아이스크림
+
+#Links
+철수 크림 likes
+영이 커피 likes
+영이 보미 isCloseTo
+철수 영이 loves
+
+#End

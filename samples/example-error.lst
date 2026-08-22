@@ -1,0 +1,18 @@
+#Project
+h1 오류 테스트
+
+#Class
+사람 blue circle
+
+#Relation
+likes 좋아한다 arrow
+
+#Nodes
+철수 사람 철수
+영이 동물 영이
+
+#Links
+철수 영이 likes
+철수 민수 loves
+
+#End

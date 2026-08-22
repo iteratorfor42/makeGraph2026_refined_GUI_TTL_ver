@@ -1,0 +1,29 @@
+#Project
+h1 아이콘과 하이퍼링크 예제
+
+#Class
+사람 blue circle
+동물 red box
+음식 green ellipse
+
+#Relation
+likes 좋아한다 arrow 2
+loves 사랑한다 moving-arrows 2
+isCloseTo 친하다 both 2
+isPreviousTo ~보다_먼저이다 sequence
+
+#Nodes
+철수 사람 철수 files/sample1.htm#Cheol-su files/Cheol.png 1
+영이 사람 영이 files/sample1.htm#Yeong-i files/Yeong.png 1
+보미 동물 보미 null files/Dog.png 2
+커피 음식 커피 files/sample1.htm#Coffee files/Coffee.png 0
+크림 음식 아이스크림 files/sample1.htm#IceCream files/IceCream.png 0
+
+#Links
+철수 크림 likes
+영이 커피 likes
+영이 보미 isCloseTo
+철수 영이 loves
+커피 크림 isPreviousTo
+
+#End

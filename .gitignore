@@ -1,0 +1,17 @@
+# 빌드 산출물
+/dist/
+/build/
+src/*.spec
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# 생성된 HTML (샘플 실행 결과)
+samples/*.html
+docs/comparison-results/
+
+# OS
+.DS_Store
+Thumbs.db
