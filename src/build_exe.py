@@ -3,12 +3,13 @@
 """
 build_exe.py
 ------------
-gui.py(더블클릭으로 실행되는 GUI 앱)를 Windows 실행파일(makegraph.exe)로
-패키징한다. 실행하면 창이 뜨고, 그 안에서 '파일 열기'로 .lst 또는 .ttl을
-불러오는 방식이다 (Protege와 유사한 사용성).
+gui.py(더블클릭으로 실행되는 GUI 앱)를 Windows 실행파일(makegraph.exe)로 패키징한다. 
+실행하면 창이 뜨고, 그 안에서 '파일 열기'로 .lst 또는 .ttl을 불러오는 방식이다. 
+(Protege를 참고해 만들었기에 Protege와 유사하다.)
 
-반드시 Windows 환경에서 실행해야 한다 (PyInstaller는 크로스 컴파일을
-지원하지 않으므로, Linux/Mac에서 실행하면 그 OS용 실행파일이 만들어진다).
+반드시 Windows 환경에서 실행해야 한다 
+(PyInstaller는 크로스 컴파일을 지원하지 않으므로, 
+ Linux/Mac에서 실행하면 관련 OS용 실행파일이 만들어진다).
 
 사용법:
     python build_exe.py
