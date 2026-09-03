@@ -5,8 +5,8 @@ ttl_loader.py
 Turtle(.ttl) 온톨로지 파일을 읽어 makegraph.py의 ParseResult와 동일한
 데이터 구조(Class/Relation/Node/Link)로 변환한다.
 
-.lst 문법에는 "Class/Relation/Node"라는 명시적 섹션이 있지만, 
-TTL(RDF)에는 그런 구분이 없다. 따라서 다음과 같은 휴리스틱(Heuristic; 임의 실용 규칙)으로 대응한다.
+.lst 문법에는 "Class/Relation/Node"라는 명시적 섹션이 있지만, TTL(RDF)에는
+그런 구분이 없다. 따라서 다음과 같은 휴리스틱으로 대응한다.
 
   - Class    : rdf:type의 목적어로 쓰인 리소스
                (owl:Class, rdfs:Class 등 스키마 자체는 제외)

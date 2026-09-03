@@ -3,13 +3,12 @@
 """
 build_exe.py
 ------------
-gui.py(더블클릭으로 실행되는 GUI 앱)를 Windows 실행파일(makegraph.exe)로 패키징한다. 
-실행하면 창이 뜨고, 그 안에서 '파일 열기'로 .lst 또는 .ttl을 불러오는 방식이다. 
-(Protege를 참고해 만들었기에 Protege와 유사하다.)
+gui.py(더블클릭으로 실행되는 GUI 앱)를 Windows 실행파일(makegraph.exe)로
+패키징한다. 실행하면 창이 뜨고, 그 안에서 '파일 열기'로 .lst 또는 .ttl을
+불러오는 방식이다 (Protege와 유사한 사용성).
 
-반드시 Windows 환경에서 실행해야 한다 
-(PyInstaller는 크로스 컴파일을 지원하지 않으므로, 
- Linux/Mac에서 실행하면 관련 OS용 실행파일이 만들어진다).
+반드시 Windows 환경에서 실행해야 한다 (PyInstaller는 크로스 컴파일을
+지원하지 않으므로, Linux/Mac에서 실행하면 그 OS용 실행파일이 만들어진다).
 
 사용법:
     python build_exe.py
@@ -76,13 +75,17 @@ def build() -> None:
 
     run([
         sys.executable, "-m", "PyInstaller",
-        "--onefile",                 # 단일 exe 파일로 묶기
-        "--windowed",                # GUI 프로그램 (콘솔창 띄우지 않음)
+        "--onefile",                    # 단일 exe 파일로 묶기
+        "--windowed",                   # GUI 프로그램 (콘솔창 띄우지 않음)
         "--name", "makegraph",
         "--distpath", str(DIST_DIR),
         "--workpath", str(BUILD_DIR),
         "--specpath", str(HERE),
-        "--collect-all", "rdflib",   # rdflib의 플러그인/데이터 파일까지 포함
+        "--collect-all", "rdflib",      # rdflib 모듈/데이터/플러그인 전부 포함
+        "--collect-submodules", "rdflib.plugins",  # 파서/직렬화 플러그인 누락 방지
+        "--hidden-import", "rdflib.plugins.parsers.notation3",
+        "--hidden-import", "rdflib.plugins.serializers.turtle",
+        "--noconfirm",
         str(ENTRY_SCRIPT),
     ])
 
@@ -99,6 +102,11 @@ def build() -> None:
 
 
 if __name__ == "__main__":
+    print("=" * 60)
+    print(" MakeGraph.exe 빌드 시작")
+    print(" (주의: 'python src/gui.py'는 앱을 실행만 할 뿐 exe를 만들지")
+    print("  않습니다. exe 파일은 이 스크립트를 실행해야 생성됩니다.)")
+    print("=" * 60)
     ensure_pyinstaller()
     ensure_rdflib()
     clean_previous_build()

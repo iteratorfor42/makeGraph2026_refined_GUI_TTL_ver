@@ -14,6 +14,12 @@
 > 원본 실행파일은 비교 검증용 참고 자료로만 보관하며, 역컴파일하거나
 > 코드를 그대로 이식하지 않는다.
 
+> ⚠️ **중요한 구분**
+> - `run.bat` / `python src/gui.py` → **앱을 실행만** 합니다 (exe 생성 X)
+> - `build.bat` / `python src/build_exe.py` → **`dist/makegraph.exe`를 생성**합니다
+>
+> "실행"과 "빌드"는 서로 다른 별개의 작업입니다.
+
 ---
 
 ## 저장소 구조
@@ -23,6 +29,8 @@ makegraph/
 │
 ├─ README.md
 ├─ requirements.txt
+├─ run.bat                     # 더블클릭 → 앱 실행 (exe 생성 안 함)
+├─ build.bat                   # 더블클릭 → dist/makegraph.exe 생성
 │
 ├─ original/
 │  └─ makeGraph2022.exe        # 원본 보관 (수정하지 않음, 비교 검증용)
@@ -48,7 +56,12 @@ makegraph/
 
 ---
 
-## 빠른 시작 (개발 환경에서 바로 실행)
+## 1) 그냥 실행만 해보기 (exe 없이)
+
+Windows에서 저장소 루트의 **`run.bat`을 더블클릭**하면 필요한 패키지를
+자동 설치하고 GUI 창을 띄운다.
+
+또는 터미널에서:
 
 ```powershell
 pip install -r requirements.txt
@@ -58,12 +71,20 @@ python src/gui.py
 창이 뜨면 **파일 열기**로 `samples/example.lst` 또는 `samples/example.ttl`을
 선택한다. 그래프 HTML이 생성되고 자동으로 기본 브라우저에서 열린다.
 
+`.ttl`을 열었는데 rdflib이 없다는 팝업이 뜨면, **"예"를 누르면 자동으로
+설치**된다 (인터넷 연결 필요). 설치가 안 되면 터미널에서
+`pip install rdflib`을 직접 실행해도 된다.
+
 ---
 
-## Windows 실행파일(exe)로 빌드하기
+## 2) Windows 실행파일(exe)로 빌드하기
 
 PyInstaller는 크로스 컴파일을 지원하지 않으므로 **반드시 Windows에서**
 빌드해야 한다.
+
+Windows에서 저장소 루트의 **`build.bat`을 더블클릭**하면 자동으로 빌드된다.
+
+또는 터미널에서:
 
 ```powershell
 cd src
@@ -71,7 +92,8 @@ python build_exe.py
 ```
 
 - PyInstaller / rdflib이 없으면 자동 설치
-- 결과물: 저장소 루트의 `dist/makegraph.exe` (콘솔창 없는 단일 GUI 실행파일)
+- 결과물: 저장소 루트의 `dist/makegraph.exe` (콘솔창 없는 단일 GUI 실행파일,
+  rdflib이 exe 안에 내장되어 있어 별도 설치 없이 TTL도 바로 열림)
 - 실행: `dist/makegraph.exe` 더블클릭 → 파일 열기
 - 탐색기에서 `.lst`/`.ttl` 파일을 `makegraph.exe`에 드래그해도 바로 열린다
   (원본처럼 drag & drop 실행 방식 지원)

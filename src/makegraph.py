@@ -6,8 +6,8 @@ makegraph.py
 MakeGraph2022 호환 재구현 (Phase 1: 실용적 현대화)
 
 한국학중앙연구원 디지털인문학연구소의 makeGraph2022.exe가 사용하던
-온톨로지 설계 스크립트(.lst)를 읽어, 
-Vis.js Network 기반의 네트워크 그래프 HTML 파일을 생성한다.
+온톨로지 설계 스크립트(.lst)를 읽어, Vis.js Network 기반의
+네트워크 그래프 HTML 파일을 생성한다.
 
 이 구현은 공개된 사용 설명서(README.md 및 매뉴얼 문서)에 기술된
 입력 문법과 동작 규칙만을 근거로 한 클린룸(clean-room) 재구현이며,
@@ -495,7 +495,7 @@ def render_error_html(errors: List[ParseError], vis_js_src: str) -> str:
 
 
 # ---------------------------------------------------------------------------
-# CLI (이 구현에 대한 자세한 정보는 기존 저장소 makeGraph2026_refined에서 확인할 수 있다.)
+# CLI
 # ---------------------------------------------------------------------------
 
 def main(argv: Optional[List[str]] = None) -> int:
