@@ -8,7 +8,7 @@
 Vis.js 기반 네트워크 그래프 HTML을 생성해 브라우저로 보여줍니다.
 필자는 .ttl로 작업했고, 작업 원본 캡처는 다음과 같습니다.
 
-![MakeGraph GUI로 .ttl 파일을 열어 생성한 네트워크 그래프 예시]
+[MakeGraph GUI로 .ttl 파일을 열어 생성한 네트워크 그래프 예시]
 (docs/images/visualization-example.png)
 
 (구현 가능성을 보이기 위해 이 작업을 했을 뿐,
