@@ -5,8 +5,8 @@ ttl_loader.py
 Turtle(.ttl) 온톨로지 파일을 읽어 makegraph.py의 ParseResult와 동일한
 데이터 구조(Class/Relation/Node/Link)로 변환한다.
 
-.lst 문법에는 "Class/Relation/Node"라는 명시적 섹션이 있지만, TTL(RDF)에는
-그런 구분이 없다. 따라서 다음과 같은 휴리스틱으로 대응한다.
+.lst 문법에는 "Class/Relation/Node"라는 명시적 섹션이 있지만, 
+TTL(RDF)에는 그런 구분이 없다. 따라서 다음과 같은 휴리스틱으로 대응한다.
 
   - Class    : rdf:type의 목적어로 쓰인 리소스
                (owl:Class, rdfs:Class 등 스키마 자체는 제외)
@@ -17,9 +17,13 @@ Turtle(.ttl) 온톨로지 파일을 읽어 makegraph.py의 ParseResult와 동일
   - Link     : subject/object가 모두 "개체로 인식된" 노드인 트리플만 사용
 
 리터럴 값(문자열/숫자 등)을 갖는 datatype property는 노드로 만들지 않고
-현재는 시각화에서 제외한다 (그래프가 지저분해지는 것을 방지).
+현재는 시각화에서 제외한다.
+(그래프가 지저분해지는 것을 방지하고자 이렇게 한 것이며,
+온톨로지 프로젝트 구상 단계에서 노드가 최소 50개 이상이 되었기에 시각화는 최대한 단순하게 했다.
+시각화의 단순함과 복잡성은 지원자 포트폴리오 웹페이지
+[일제강점기 독립운동 & 근대학교 온톨로지] 시각화 v1와 v10를 비교를 통해 명확히 알 수 있다.)
 
-이 파일은 makegraph.py와 같은 폴더에 있어야 한다 (mg.ClassDef 등을 재사용).
+참고> 이 파일은 makegraph.py와 같은 폴더에 있어야 한다 (mg.ClassDef 등을 재사용).
 """
 
 from __future__ import annotations

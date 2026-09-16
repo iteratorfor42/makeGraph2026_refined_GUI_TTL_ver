@@ -3,12 +3,14 @@
 """
 build_exe.py
 ------------
-gui.py(더블클릭으로 실행되는 GUI 앱)를 Windows 실행파일(makegraph.exe)로
-패키징한다. 실행하면 창이 뜨고, 그 안에서 '파일 열기'로 .lst 또는 .ttl을
-불러오는 방식이다 (Protege와 유사한 사용성).
+gui.py(더블클릭으로 실행되는 GUI 앱)를 Windows 실행파일(makegraph.exe)로 패키징한다. 
+실행하면 창이 뜨고, 그 안에서 '파일 열기'로 .lst 또는 .ttl을 불러오는 방식이다 
+(Protege와 유사한 사용성).
 
-반드시 Windows 환경에서 실행해야 한다 (PyInstaller는 크로스 컴파일을
-지원하지 않으므로, Linux/Mac에서 실행하면 그 OS용 실행파일이 만들어진다).
+반드시 Windows 환경에서 실행해야 한다.
+(PyInstaller는 크로스 컴파일을 지원하지 않으므로, 
+Linux/Mac에서 실행하면 그 OS용 실행파일이 만들어진다.
+필자가 윈도우를 사용하여 윈도우 환경을 최우선으로 고려했다.)
 
 사용법:
     python build_exe.py
@@ -17,7 +19,7 @@ gui.py(더블클릭으로 실행되는 GUI 앱)를 Windows 실행파일(makegrap
     dist/makegraph.exe   (단일 파일, GUI 프로그램 — 콘솔창 없이 실행됨)
 
 요구 사항:
-    - Windows 10/11
+    - Windows 10/11 (윈도우 10도 가능하게끔 접근했으나, 필자는 11에서 구현 및 사용했다.)
     - Python 3.9 이상 (64bit 권장, tkinter 포함된 표준 배포판)
     - 인터넷 연결 (최초 1회, pyinstaller/rdflib 설치용)
 """

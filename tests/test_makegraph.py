@@ -2,12 +2,7 @@
 """
 test_makegraph.py
 ------------------
-src/makegraph.py, src/ttl_loader.py에 대한 회귀 테스트.
-
-원본 makeGraph2022.exe는 Windows 전용 프로그램이라 이 환경에서 직접
-실행/비교할 수 없다. 따라서 여기서는 공개 매뉴얼에 기술된 .lst 문법
-스펙을 코드가 정확히 지키는지, TTL 매핑 규칙이 의도대로 동작하는지를
-검증한다. 원본과의 시각적 비교 절차는 docs/comparison.md 참고.
+src/makegraph.py, src/ttl_loader.py에 대한 검증용 테스트.
 
 실행:
     python -m pytest tests/ -v

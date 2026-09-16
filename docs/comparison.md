@@ -1,8 +1,6 @@
 # 원본(makeGraph2022.exe)과의 비교 검증
 
-이 저장소는 Windows 전용 실행파일(`original/makeGraph2022.exe`)을 직접
-실행할 수 없는 환경에서 개발되었다. 아래 절차는 **Windows 환경에서
-직접 수행**해야 하는 검증 가이드다.
+이 저장소는 Windows 전용 실행파일(`original/makeGraph2022.exe`)을 직접 실행할 수 없는 환경에서 개발되었다. 아래 절차는 **Windows 환경에서 직접 수행**해야 하는 검증 가이드다.
 
 ## 절차
 
@@ -29,9 +27,11 @@
 | 오류 발생 시 화면 | | | | |
 
 5. 차이가 발견되면 `src/makegraph.py` / `src/ttl_loader.py`를 수정하고
-   `tests/test_makegraph.py`에 회귀 테스트를 추가한다.
+   `tests/test_makegraph.py`에 회귀 테스트[참고> test_makegraph.py'에는 검증 테스트라고 표현]를 추가한다.
 
-## 현재까지 알려진 의도적 차이
+## 의도적 차이
 
-README.md의 "알려진 한계" 항목 참고. 특히 `moving-arrows`의 애니메이션
-재현은 Windows 환경에서 원본 동작을 직접 관찰한 뒤 결정한다.
+README.md의 "알려진 한계" 항목 참고. 
+특히 `moving-arrows`의 애니메이션 재현은 Windows 환경에서 원본 동작을 직접 관찰한 뒤 결정한다.
+필자는 최소 노드와 링크를 100개 이상 고려했기 때문에 GUI 환경에서 최대한 단순하게 구현되게끔 했고,
+보다 복잡한 시각화는 온톨로지 웹사이트에 구현했다.

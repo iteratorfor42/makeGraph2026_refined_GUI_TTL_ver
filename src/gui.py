@@ -3,10 +3,11 @@
 gui.py
 ------
 MakeGraph GUI — Protege처럼 프로그램을 먼저 실행한 뒤,
-메뉴/버튼으로 .lst 또는 .ttl 온톨로지 파일을 불러와 네트워크 그래프를
-생성하고 브라우저로 보여준다.
+메뉴/버튼으로 .lst 또는 .ttl 온톨로지 파일을 불러와 
+네트워크 그래프를 생성하고 브라우저로 보여준다.
 
-빌드 시 이 파일을 진입점(entry point)으로 사용한다 (build_exe.py 참고).
+빌드 시 이 파일을 진입점(entry point)으로 사용한다. 
+[build_exe.py 참고]
 
 지원 파일:
   - .lst : MakeGraph2022 온톨로지 스크립트 (makegraph.py의 parse_lst 사용)
